@@ -12,6 +12,6 @@ const usermodel = new mongoose.Schema({
   pincode: String,
 });
 
-const user = new mongoose.model("userdata", usermodel);
+const user = mongoose.model("userdata", usermodel, "userdata");
 
 module.exports = user;

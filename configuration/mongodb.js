@@ -1,9 +1,13 @@
-require("dotenv").config();
 const mongoose = require("mongoose");
-
-const uri = process.env.MONGO_URI;
+require("dotenv").config();
 
 mongoose
-  .connect(uri)
-  .then(() => console.log("MongoDB Connected Successfully"))
-  .catch((err) => console.log("MongoDB connection error:", err));
+  .connect(process.env.MONGO_URI, {
+    family: 4,
+  })
+  .then(() => {
+    console.log("MongoDB Connected Successfully");
+  })
+  .catch((err) => {
+    console.log("MongoDB connection error:", err);
+  });
